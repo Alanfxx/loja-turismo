@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { Header } from 'components'
 
 const circular = localFont({
   src: [
@@ -35,7 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={`${circular.variable} font-circular`}>
-      <body>{children}</body>
+      <body className="bg-gray-5">
+        <Header></Header>
+        <main>{children}</main>
+      </body>
     </html>
   )
 }

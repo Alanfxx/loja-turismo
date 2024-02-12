@@ -97,6 +97,7 @@ const config: Config = {
           black: '#0A2156',
         },
         gray: {
+          5: '#F6F6F6',
           10: '#E7E9ED',
           20: '#CED2DB',
           30: '#B6BCC9',
