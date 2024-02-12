@@ -52,7 +52,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className={`text-paragraph-2/2 m-0 max-w-[30ch] text-sm opacity-50`}>
+          <p className={`text-brand-color-green m-0 max-w-[30ch] text-sm opacity-50`}>
             Find in-depth information about Next.js features and API.
           </p>
         </a>
