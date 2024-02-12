@@ -5,8 +5,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    "plugin:@next/next/recommended",
-    "plugin:prettier/recommended",
+    'plugin:@next/next/recommended',
+    'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   ignorePatterns: [
     '.next',
