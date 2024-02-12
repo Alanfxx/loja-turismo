@@ -125,6 +125,13 @@ const config: Config = {
         xl: '12rem',
         xxl: '20rem',
       },
+      boxShadow: {
+        s: '0 0.2rem 0.4rem 0 rgba(11, 31, 77, 0.08)',
+        m: '0 0.4rem 0.8rem 0 rgba(11, 31, 77, 0.1)',
+        l: '0 0.8rem 1.6rem 0 rgba(11, 31, 77, 0.12)',
+        xl: '0 1.2rem 2.4rem 0 rgba(11, 31, 77, 0.14)',
+        xxl: '0 1.6rem 3.2rem 0 rgba(11, 31, 77, 0.16)',
+      },
     },
   },
   plugins: [require('tailwindcss-base-font-size')],
