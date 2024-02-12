@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .page-base {
+  .page-width {
     @apply w-full mx-auto max-w-[1320px];
   }
 }

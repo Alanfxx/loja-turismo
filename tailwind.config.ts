@@ -65,7 +65,7 @@ const config: Config = {
             fontWeight: '350',
           },
         ],
-        'paragraph-2/2': [
+        'paragraph-22': [
           '1.6rem',
           {
             lineHeight: '2.2rem',
@@ -97,7 +97,8 @@ const config: Config = {
           black: '#0A2156',
         },
         gray: {
-          5: '#F6F6F6',
+          '00': '#FFFFFF',
+          '05': '#F6F6F6',
           10: '#E7E9ED',
           20: '#CED2DB',
           30: '#B6BCC9',
@@ -114,8 +115,9 @@ const config: Config = {
           '02': '#0BB07B',
           '03': '#FFAD0D',
           '04': '#F03D3D',
-          '05': '#E7E9ED',
+          '05': '#3C4C70',
         },
+        primary: '#0045F3',
       },
       spacing: {
         xxs: '1rem',
