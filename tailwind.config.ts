@@ -8,9 +8,87 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        circular: ['var(--font-circular)'],
+      },
+      fontWeight: {
+        book: '350',
+        medium: '500',
+        bold: '700',
+      },
+      fontSize: {
+        display: [
+          '5.5rem',
+          {
+            lineHeight: '5.5rem',
+            letterSpacing: '-0.2rem',
+            fontWeight: '700',
+          },
+        ],
+        'heading-1': [
+          '4rem',
+          {
+            lineHeight: '4.5rem',
+            letterSpacing: '-0.2rem',
+            fontWeight: '700',
+          },
+        ],
+        'heading-2': [
+          '2.4rem',
+          {
+            lineHeight: '3rem',
+            letterSpacing: '-0.1rem',
+            fontWeight: '700',
+          },
+        ],
+        'heading-3': [
+          '2.2rem',
+          {
+            lineHeight: '2.8rem',
+            letterSpacing: '0',
+            fontWeight: '500',
+          },
+        ],
+        'paragraph-1': [
+          '2rem',
+          {
+            lineHeight: '2.6rem',
+            letterSpacing: '0',
+            fontWeight: '350',
+          },
+        ],
+        'paragraph-2': [
+          '1.6rem',
+          {
+            lineHeight: '2.2rem',
+            letterSpacing: '0',
+            fontWeight: '350',
+          },
+        ],
+        'paragraph-2/2': [
+          '1.6rem',
+          {
+            lineHeight: '2.2rem',
+            letterSpacing: '0',
+            fontWeight: '700',
+          },
+        ],
+        'paragraph-3': [
+          '1.4rem',
+          {
+            lineHeight: '1.8rem',
+            letterSpacing: '0',
+            fontWeight: '350',
+          },
+        ],
+        'paragraph-4': [
+          '1.2rem',
+          {
+            lineHeight: '1.6rem',
+            letterSpacing: '0',
+            fontWeight: '350',
+          },
+        ],
       },
     },
   },
