@@ -1,7 +1,4 @@
-type TSVG = React.FunctionComponent<
-  React.SVGProps<SVGSVGElement> & {
-    title?: string
-  }
->
-
-export type { TSVG }
+export type { TSVG } from './SVG'
+export type { TTicket } from './Ticket'
+export type { TResponse } from './Response'
+export type { TTicketQuery } from './TicketQuery'
