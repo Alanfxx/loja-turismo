@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={`${circular.variable} font-circular`}>
-      <body className="bg-gray-05">
+      <body className="bg-gray-05 text-sm font-book text-brand-color-black">
         <Header />
         <main>{children}</main>
       </body>

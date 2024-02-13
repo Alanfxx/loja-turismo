@@ -1,1 +1,5 @@
 export { default as Header } from './Header'
+export { default as SearchSection } from './SearchSection'
+export { default as Filters } from './Filters'
+export { default as CheckBox } from './CheckBox'
+export { default as If } from './If'
