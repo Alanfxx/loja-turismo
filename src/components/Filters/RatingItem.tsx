@@ -6,8 +6,8 @@ export default function RatingItem(props: { stars: number; value: number }) {
       <div className="flex text-support-03">
         {Array(props.stars)
           .fill(0)
-          .map(() => (
-            <StarIcon className="size-6" />
+          .map((_, i) => (
+            <StarIcon key={i} className="size-6" />
           ))}
       </div>
 

@@ -20,4 +20,4 @@ type TTicket = {
   updatedAt: string
 }
 
-export type { TTicket }
+export type { TTicket, TPrice, TRating }

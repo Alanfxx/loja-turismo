@@ -4,7 +4,7 @@ import ReviewScoreItem from './ReviewScoreItem'
 export default function ReviewScoreFilter() {
   return (
     <div className="flex flex-col gap-3">
-      <TitleFilter title="Preço" />
+      <TitleFilter title="Review Score" />
 
       <div className="flex flex-col gap-3">
         <ReviewScoreItem score={9} label="Excelente (543)" />
