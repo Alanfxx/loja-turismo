@@ -1,5 +1,5 @@
 import ComodidadesFilter from './ComodidadesFilter'
-import Divider from './Divider'
+import { Divider } from 'components'
 import PriceFilter from './PriceFilter'
 import RatingFilter from './RatingFilter'
 import ReviewScoreFilter from './ReviewScoreFilter'

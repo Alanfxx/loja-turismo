@@ -1,12 +1,15 @@
 import { LogoIcon, MessageQuestionIcon, ShopIcon, UserIcon } from 'icons'
 import Image from 'next/image'
 import BrFlag from 'assets/img/br-flag.png'
+import Link from 'next/link'
 
 export default function Header() {
   return (
     <header className="h-[10rem] w-full border-[0.08rem] border-b-gray-10 bg-gray-00 px-xs">
       <div className="page-width flex h-full items-center justify-between">
-        <LogoIcon className="h-[2.95rem] w-[13.56rem]" />
+        <Link href="/">
+          <LogoIcon className="h-[2.95rem] w-[13.56rem]" />
+        </Link>
 
         <div className="flex h-[5rem] items-center gap-4">
           <p className="text-paragraph-4 text-support-05">Cotação dólar hoje: R$5,53</p>

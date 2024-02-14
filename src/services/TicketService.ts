@@ -9,7 +9,9 @@ async function getTickets(query: TTicketQuery): Promise<TResponse<Array<TTicket>
   limit && queryString.append('limit', limit.toString())
   search && queryString.append('search', search)
 
-  const response = await fetch(`${baseUrl}/v1/tickets?${queryString}`)
+  const response = await fetch(`${baseUrl}/v1/tickets?${queryString}`, {
+    next: { revalidate: 300 },
+  })
 
   if (response.ok) {
     return { data: await response.json() }
@@ -29,7 +31,7 @@ async function getTicketsClient(query: TTicketQuery): Promise<TResponse<Array<TT
   limit && queryString.append('limit', limit.toString())
   search && queryString.append('search', search)
 
-  const response = await fetch(`/api/tickets?${queryString}`)
+  const response = await fetch(`/api/tickets?${queryString}`, { next: { revalidate: 300 } })
 
   if (response.ok) {
     return { data: await response.json() }
@@ -38,4 +40,14 @@ async function getTicketsClient(query: TTicketQuery): Promise<TResponse<Array<TT
   return { error: await response.json() }
 }
 
-export default { getTickets, getTicketsClient }
+async function getTicketById(id: string): Promise<TResponse<TTicket>> {
+  const response = await fetch(`${baseUrl}/v1/tickets/${id}`, { next: { revalidate: 300 } })
+
+  if (response.ok) {
+    return { data: await response.json() }
+  }
+
+  return { error: { message: 'Ocorreu um erro ao obter o ticket.', status: response.status } }
+}
+
+export default { getTickets, getTicketsClient, getTicketById }
