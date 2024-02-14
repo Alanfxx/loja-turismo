@@ -6,7 +6,7 @@ import { numberToBrl } from 'utils'
 
 export default function TicketSummary(props: Readonly<{ ticket: TTicket }>) {
   return (
-    <div className="flex min-w-[35.3rem] flex-col gap-6 rounded-lg bg-gray-00 p-6">
+    <div className="flex min-w-[35.3rem] flex-col gap-6 rounded-lg bg-gray-00 p-6 max-lg:w-full">
       <TicketSummaryDropDown
         title="Data do Ingresso"
         description="22/12/2022"

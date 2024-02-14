@@ -20,7 +20,7 @@ export default async function Ingresso({ params }: TProps) {
 
   if (response.error || !response.data) {
     return (
-      <section className="h-[30rem] px-xs">
+      <section className="h-[30rem] px-xxs lg:px-xs">
         <div className="page-width flex h-full items-center justify-center">
           <p className="text-paragraph-2">Ingresso não encontrado.</p>
         </div>
@@ -31,7 +31,7 @@ export default async function Ingresso({ params }: TProps) {
   const ticket = response.data
 
   return (
-    <section className="px-xs">
+    <section className="px-xxs lg:px-xs">
       <div className="page-width">
         <div className="flex gap-4 py-8">
           <Link href="/">
@@ -58,11 +58,11 @@ export default async function Ingresso({ params }: TProps) {
           </If>
         </div>
 
-        <div className="flex items-start gap-9 pb-16 pt-9">
-          <div className="flex flex-1 flex-col gap-6">
+        <div className="flex flex-wrap items-start gap-9 pb-16 pt-9">
+          <div className="flex max-w-full flex-1 flex-col gap-6">
             <Reviews rating={ticket.rating} />
 
-            <div className="flex items-center gap-3.5">
+            <div className="flex flex-wrap items-center gap-3.5">
               <PackageItem title="Passagem Aérea" icon={AirlineTicketIcon} />
               <PackageItem title="Wi-fi" icon={WifiIcon} />
               <PackageItem title="Café da manhã" icon={CoffeeCupIcon} />

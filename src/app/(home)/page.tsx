@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <SearchSection />
-      <section className="flex items-center px-xs py-9">
+      <section className="flex items-center px-xxs py-9 lg:px-xs">
         <div className="page-width flex items-start gap-6">
           <Filters />
           <TourList />
