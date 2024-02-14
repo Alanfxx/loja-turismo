@@ -30,7 +30,7 @@ export default function TicketPagination() {
         </select>
       </div>
 
-      <div className="flex items-center gap-1 text-brand-color-blue">
+      <div className="flex items-center gap-2 text-brand-color-blue">
         <button
           onClick={() => ticketController.prevPage()}
           disabled={page === 1}
@@ -41,22 +41,28 @@ export default function TicketPagination() {
         <If condition={page - 1 > 1}>
           <span>...</span>
         </If>
-        <If condition={page > 1}>
+        <If condition={page > 1 && total / limit > page}>
           <PaginationButton value={page - 1} />
           <PaginationButton value={page} />
           <PaginationButton value={page + 1} />
+        </If>
+        <If condition={total / limit <= page}>
+          <PaginationButton value={page - 2} />
+          <PaginationButton value={page - 1} />
+          <PaginationButton value={page} />
         </If>
         <If condition={page === 1}>
           <PaginationButton value={1} />
           <PaginationButton value={2} />
           <PaginationButton value={3} />
         </If>
-        <If condition={total / limit > page}>
+        <If condition={total / limit > page + 1}>
           <span>...</span>
         </If>
         <button
           onClick={() => ticketController.nextPage()}
           className="rounded hover:bg-gray-10 disabled:text-brand-color-blue/50"
+          disabled={total / limit <= page}
         >
           <ChevronRightIcon className="size-6" />
         </button>

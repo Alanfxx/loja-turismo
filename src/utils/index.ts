@@ -1,1 +1,1 @@
-export { getReviewByRating, numberToBrl, addZero } from './methods'
+export { getReviewByRating, numberToBrl, addZero, isValidHttpUrl } from './methods'

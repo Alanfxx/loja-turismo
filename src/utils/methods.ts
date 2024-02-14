@@ -7,6 +7,7 @@ function getReviewByRating(rating: number): string {
 }
 
 function numberToBrl(currency: number): string {
+  if (!currency) return '-'
   return currency.toLocaleString('pt-br', { maximumFractionDigits: 2 })
 }
 
@@ -15,4 +16,13 @@ function addZero(value: number): string {
   return tempValue.length === 1 ? `0${tempValue}` : tempValue
 }
 
-export { getReviewByRating, numberToBrl, addZero }
+function isValidHttpUrl(value: string) {
+  try {
+    const newUrl = new URL(value)
+    return newUrl.protocol === 'http:' || newUrl.protocol === 'https:'
+  } catch (err) {
+    return false
+  }
+}
+
+export { getReviewByRating, numberToBrl, addZero, isValidHttpUrl }
