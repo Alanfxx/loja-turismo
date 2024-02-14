@@ -4,7 +4,7 @@ import BrFlag from 'assets/img/br-flag.png'
 
 export default function Header() {
   return (
-    <header className="h-[10rem] w-full border border-b-gray-10 bg-gray-00 px-xs">
+    <header className="h-[10rem] w-full border-[0.08rem] border-b-gray-10 bg-gray-00 px-xs">
       <div className="page-width flex h-full items-center justify-between">
         <LogoIcon className="h-[2.95rem] w-[13.56rem]" />
 
@@ -19,7 +19,7 @@ export default function Header() {
             <span className="text-paragraph-22">Entrar</span>
           </button>
 
-          <button className="flex h-full items-center gap-1.5 rounded bg-primary px-3 py-1.5 text-gray-00">
+          <button className="flex h-full items-center gap-1.5 rounded bg-primary px-3 py-1.5 text-gray-00 hover:bg-primary/80">
             <ShopIcon className="size-9" />
             <span className="rounded-full bg-gray-00/10 px-2 text-paragraph-1">0</span>
           </button>
