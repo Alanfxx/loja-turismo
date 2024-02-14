@@ -1,17 +1,20 @@
 'use client'
 import { useEffect } from 'react'
-import TourItem from './TourItem'
-import { useTicketStore } from 'store'
+import { useFilterStore, useTicketStore } from 'store'
 import { useTicketController } from 'controllers'
 import { If } from 'components'
+import TourItem from './TicketItem'
+import TicketsSkeleton from './TicketsSkeleton'
+import TicketPagination from './TicketPagination'
 
-export default function TourList() {
+export default function TicketList() {
   const { tickets, loading, error } = useTicketStore()
   const ticketController = useTicketController()
+  const { page } = useFilterStore()
 
   useEffect(() => {
     ticketController.loadTickets()
-  }, [])
+  }, [page])
 
   return (
     <div className="flex flex-1 flex-col gap-3.5">
@@ -23,19 +26,8 @@ export default function TourList() {
       </If>
       <If condition={!error && !loading}>
         {tickets?.map(t => <TourItem ticket={t} key={t.id} />)}
+        <TicketPagination />
       </If>
     </div>
-  )
-}
-
-function TicketsSkeleton() {
-  return (
-    <>
-      {Array(6)
-        .fill(0)
-        .map((_, i) => (
-          <div key={i} className="h-[23.3rem] w-full animate-pulse bg-gray-10 shadow-s"></div>
-        ))}
-    </>
   )
 }

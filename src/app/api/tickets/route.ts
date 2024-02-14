@@ -3,12 +3,17 @@ import { TicketService } from 'services'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const page = searchParams.get('page') ?? 1
-  const limit = searchParams.get('limit') ?? 6
-  const search = searchParams.get('search') ?? undefined
+  const page = Number(searchParams.get('page'))
+  const limit = Number(searchParams.get('limit'))
+  const search = searchParams.get('search')
+
+  let query
+  if (page && limit) {
+    query = { page, limit, search: search ?? undefined }
+  }
 
   try {
-    const response = await TicketService.getTickets({ page: +page, limit: +limit, search })
+    const response = await TicketService.getTickets(query)
 
     if (response.error)
       return Response.json({ message: response.error.message }, { status: response.error.status })

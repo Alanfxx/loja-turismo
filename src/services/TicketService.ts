@@ -1,11 +1,13 @@
 import { TResponse, TTicket, TTicketQuery } from 'types'
 const baseUrl = process.env.API_BASEURL
 
-async function getTickets(query: TTicketQuery): Promise<TResponse<Array<TTicket>>> {
+async function getTickets(query?: TTicketQuery): Promise<TResponse<Array<TTicket>>> {
   const queryString = new URLSearchParams()
-  queryString.append('page', query.page.toString())
-  queryString.append('limit', query.limit.toString())
-  query.search && queryString.append('search', query.search)
+  if (query) {
+    queryString.append('page', query.page.toString())
+    queryString.append('limit', query.limit.toString())
+    query.search && queryString.append('search', query.search)
+  }
 
   const response = await fetch(`${baseUrl}/v1/tickets?${queryString}`)
 
@@ -16,11 +18,13 @@ async function getTickets(query: TTicketQuery): Promise<TResponse<Array<TTicket>
   return { data: await response.json() }
 }
 
-async function getTicketsClient(query: TTicketQuery): Promise<TResponse<Array<TTicket>>> {
+async function getTicketsClient(query?: TTicketQuery): Promise<TResponse<Array<TTicket>>> {
   const queryString = new URLSearchParams()
-  queryString.append('page', query.page.toString())
-  queryString.append('limit', query.limit.toString())
-  query.search && queryString.append('search', query.search)
+  if (query) {
+    queryString.append('page', query.page.toString())
+    queryString.append('limit', query.limit.toString())
+    query.search && queryString.append('search', query.search)
+  }
 
   const response = await fetch(`/api/tickets?${queryString}`)
 

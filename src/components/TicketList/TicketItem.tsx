@@ -1,10 +1,11 @@
-import { TRating, TTicket } from 'types'
+import { TTicket } from 'types'
 import Image from 'next/image'
 import { ArrowRightIcon, PinIcon } from 'icons'
-import { getReviewByRating, numberToBrl } from 'utils'
+import { numberToBrl } from 'utils'
 import { Button } from 'components'
+import Reviews from './Reviews'
 
-export default function TourItem(props: Readonly<{ ticket: TTicket }>) {
+export default function TicketItem(props: Readonly<{ ticket: TTicket }>) {
   const { ticket } = props
 
   return (
@@ -48,16 +49,6 @@ export default function TourItem(props: Readonly<{ ticket: TTicket }>) {
           </Button>
         </div>
       </div>
-    </div>
-  )
-}
-
-function Reviews({ rating }: Readonly<{ rating: TRating }>) {
-  return (
-    <div className="mt-8 flex items-center gap-2">
-      <div className="rounded-sm bg-brand-color-blue p-xxs text-gray-10">{rating.value}</div>
-      <span>{getReviewByRating(rating.value)}</span>
-      <span className="ms-1 text-gray-40">({rating.reviewsCount} Reviews)</span>
     </div>
   )
 }

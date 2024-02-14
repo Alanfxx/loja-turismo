@@ -10,4 +10,9 @@ function numberToBrl(currency: number): string {
   return currency.toLocaleString('pt-br', { maximumFractionDigits: 2 })
 }
 
-export { getReviewByRating, numberToBrl }
+function addZero(value: number): string {
+  const tempValue = value.toString()
+  return tempValue.length === 1 ? `0${tempValue}` : tempValue
+}
+
+export { getReviewByRating, numberToBrl, addZero }
