@@ -18,6 +18,7 @@ type TTicket = {
   rating: TRating
   createdAt: string
   updatedAt: string
+  quantidade: number
 }
 
 export type { TTicket, TPrice, TRating }

@@ -1,7 +1,8 @@
-import { LogoIcon, MessageQuestionIcon, ShopIcon, UserIcon } from 'icons'
+import { LogoIcon, MessageQuestionIcon, UserIcon } from 'icons'
 import Image from 'next/image'
 import BrFlag from 'assets/img/br-flag.png'
 import Link from 'next/link'
+import CartButton from './CartButton'
 
 export default function Header() {
   return (
@@ -24,10 +25,7 @@ export default function Header() {
             <span className="text-paragraph-22">Entrar</span>
           </button>
 
-          <button className="flex h-full items-center gap-1.5 rounded bg-primary px-3 py-1.5 text-gray-00 hover:bg-primary/80">
-            <ShopIcon className="size-9" />
-            <span className="rounded-full bg-gray-00/10 px-2 text-paragraph-1">0</span>
-          </button>
+          <CartButton />
         </div>
       </div>
     </header>

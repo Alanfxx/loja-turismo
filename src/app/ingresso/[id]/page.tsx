@@ -9,7 +9,7 @@ import {
 import Link from 'next/link'
 import Image from 'next/image'
 import { TicketService } from 'services'
-import { If, PackageItem, Reviews, TicketSummary } from 'components'
+import { Button, If, PackageItem, Reviews, TicketSummary } from 'components'
 import { isValidHttpUrl } from 'utils'
 import MapaImage from 'assets/img/mapa.webp'
 
@@ -46,7 +46,7 @@ export default async function Ingresso({ params }: TProps) {
           </div>
         </div>
 
-        <div className="flex h-[43.4rem] items-center overflow-clip bg-gray-10">
+        <div className="relative flex h-[43.4rem] items-center overflow-clip bg-gray-10">
           <If condition={isValidHttpUrl(ticket.image)}>
             <Image
               src={ticket.image}
@@ -56,6 +56,10 @@ export default async function Ingresso({ params }: TProps) {
               className="object-cover"
             />
           </If>
+
+          <Button className="absolute right-2 top-2 rounded bg-gray-00 py-3 hover:bg-gray-10">
+            <span className="text-base font-medium text-support-01">Visualizar mais fotos</span>
+          </Button>
         </div>
 
         <div className="flex flex-wrap items-start gap-9 pb-16 pt-9">
