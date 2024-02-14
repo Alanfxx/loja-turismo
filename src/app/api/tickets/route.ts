@@ -7,10 +7,7 @@ export async function GET(request: Request) {
   const limit = Number(searchParams.get('limit'))
   const search = searchParams.get('search')
 
-  let query
-  if (page && limit) {
-    query = { page, limit, search: search ?? undefined }
-  }
+  const query = { page, limit, search: search ?? undefined }
 
   try {
     const response = await TicketService.getTickets(query)

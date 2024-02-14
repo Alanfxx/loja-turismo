@@ -1,11 +1,11 @@
-import { useFilterStore } from 'store'
+import { useTicketController } from 'controllers'
 
 export default function PaginationButton(props: Readonly<{ value: number }>) {
-  const { setPage } = useFilterStore()
+  const { setPageCtrl } = useTicketController()
 
   return (
     <button
-      onClick={() => setPage(props.value)}
+      onClick={() => setPageCtrl(props.value)}
       className="rounded px-2 py-0.5 font-medium hover:bg-gray-10"
     >
       {props.value}

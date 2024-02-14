@@ -46,15 +46,18 @@ export default function TicketPagination() {
           <PaginationButton value={page} />
           <PaginationButton value={page + 1} />
         </If>
-        <If condition={total / limit <= page}>
+        <If condition={total / limit <= page && total > limit}>
           <PaginationButton value={page - 2} />
           <PaginationButton value={page - 1} />
           <PaginationButton value={page} />
         </If>
-        <If condition={page === 1}>
+        <If condition={page === 1 && total > limit}>
           <PaginationButton value={1} />
           <PaginationButton value={2} />
           <PaginationButton value={3} />
+        </If>
+        <If condition={total <= limit}>
+          <PaginationButton value={1} />
         </If>
         <If condition={total / limit > page + 1}>
           <span>...</span>
