@@ -16,12 +16,26 @@ export default function TourList() {
   return (
     <div className="flex flex-1 flex-col gap-3.5">
       <If condition={loading}>
-        <h1>Loading...</h1>
+        <TicketsSkeleton />
       </If>
       <If condition={!!error}>
         <h1>{error}</h1>
       </If>
-      {tickets?.map(t => <TourItem ticket={t} key={t.id} />)}
+      <If condition={!error && !loading}>
+        {tickets?.map(t => <TourItem ticket={t} key={t.id} />)}
+      </If>
     </div>
+  )
+}
+
+function TicketsSkeleton() {
+  return (
+    <>
+      {Array(6)
+        .fill(0)
+        .map((_, i) => (
+          <div key={i} className="h-[23.3rem] w-full animate-pulse bg-gray-10 shadow-s"></div>
+        ))}
+    </>
   )
 }
