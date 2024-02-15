@@ -5,7 +5,7 @@ export default function ReviewScoreItem(props: { score: number; label: string })
 
   return (
     <div className="flex items-center gap-xxs">
-      <div className="bg-gray-15 relative flex h-[3rem] w-[18.9rem] items-center">
+      <div className="relative flex h-[3rem] w-[18.9rem] items-center bg-gray-15">
         <If condition={props.score > 1}>
           <span className="z-10 ps-2 text-gray-00">{props.score}+</span>
         </If>
