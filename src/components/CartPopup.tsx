@@ -3,9 +3,24 @@ import { numberToBrl } from 'utils'
 import Button from './Button'
 import Divider from './Divider'
 import TicketCartItem from './TicketCartItem'
+import { ShopIcon } from 'icons'
 
 export default function CartPopup() {
   const tickets = useCartStore(state => state.tickets)
+
+  if (tickets.length === 0) {
+    return (
+      <div
+        className="absolute right-0 top-[160%] z-20 flex
+          w-[49.4rem] flex-col gap-4 bg-gray-00 p-6 drop-shadow-lg"
+      >
+        <div className="flex h-[6rem] items-end gap-2 text-gray-50">
+          <ShopIcon className="size-10" />
+          <h1 className="mb-0.5 text-heading-3">Carrinho vazio</h1>
+        </div>
+      </div>
+    )
+  }
 
   const total = tickets.reduce((sum, item) => {
     if (item.price.discount) {
@@ -21,7 +36,7 @@ export default function CartPopup() {
     >
       <div>
         <h1 className="mb-2 text-base font-bold">Ingressos</h1>
-        <div className="flex max-h-[38rem] flex-col gap-5 overflow-y-auto">
+        <div className="flex max-h-[39rem] flex-col gap-5 overflow-y-auto">
           {tickets.map(t => (
             <TicketCartItem ticket={t} key={t.id} />
           ))}
