@@ -6,7 +6,7 @@ import CartButton from './CartButton'
 
 export default function Header() {
   return (
-    <header className="h-[10rem] w-full border-[0.08rem] border-b-gray-10 bg-gray-00 px-xxs lg:px-xs">
+    <header className="z-30 h-[10rem] w-full border-b-[0.08rem] border-gray-10 bg-gray-00 px-xxs lg:px-xs">
       <div className="page-width flex h-full items-center justify-between">
         <Link href="/">
           <LogoIcon className="h-[2.95rem] w-[13.56rem]" />

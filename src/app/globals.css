@@ -6,6 +6,15 @@
   * {
     @apply border-gray-10;
   }
+  *::-webkit-scrollbar {
+    @apply w-[0.7rem];
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-gray-30 rounded-md;
+  }
 }
 
 @layer utilities {

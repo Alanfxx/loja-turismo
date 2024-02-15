@@ -10,9 +10,14 @@ export const useCartStore = create<TCartState>(set => ({
   tickets: [],
   addTicket: ticket =>
     set(state => {
-      const ticketTemp = state.tickets.find(t => t.id === ticket.id)
-      if (ticketTemp) ticketTemp.quantidade = ticketTemp.quantidade + 1
-      else return { tickets: [...state.tickets, ticket] }
+      const cartTicket = state.tickets.find(t => t.id === ticket.id)
+
+      if (cartTicket) {
+        cartTicket.quantidade = cartTicket.quantidade + 1
+      } else {
+        ticket.quantidade = 1
+        return { tickets: [...state.tickets, { ...ticket, quantidade: 1 }] }
+      }
       return { tickets: [...state.tickets] }
     }),
 }))
