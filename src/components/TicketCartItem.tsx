@@ -4,9 +4,11 @@ import { isValidHttpUrl, numberToBrl } from 'utils'
 import Divider from './Divider'
 import Image from 'next/image'
 import If from './If'
+import { useCartStore } from 'store'
 
 export default function TicketCartItem(props: Readonly<{ ticket: TTicket }>) {
   const { ticket } = props
+  const removeTicket = useCartStore(state => state.removeTicket)
 
   return (
     <div className="me-2 flex items-start gap-3">
@@ -25,7 +27,12 @@ export default function TicketCartItem(props: Readonly<{ ticket: TTicket }>) {
       <div className="flex flex-1 flex-col gap-1.5">
         <div className="flex justify-between gap-3 text-gray-60">
           <h1 className="text-paragraph-2">{ticket.name}</h1>
-          <TrashIcon className="size-4" />
+          <button
+            className="rounded-full p-1 hover:bg-gray-10"
+            onClick={() => removeTicket(ticket.id)}
+          >
+            <TrashIcon className="size-4 hover:text-brand-color-black" />
+          </button>
         </div>
         <p className="text-gray-40">1 Adulto: R$500,00 2 Crianças: R$234,33</p>
         <Divider />
