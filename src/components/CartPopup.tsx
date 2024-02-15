@@ -67,7 +67,7 @@ export default function CartPopup() {
       <Divider />
 
       <p className="flex items-center justify-between">
-        <span className="text-paragraph-22">Subtotal</span>
+        <span className="text-paragraph-22">Valor total</span>
         <span className="text-2xl text-brand-color-blue">R$ {numberToBrl(total)}</span>
       </p>
 
